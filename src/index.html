@@ -6,10 +6,71 @@
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CAMBIA EL TITLE!!! -->
-    <title>Vite Template</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+
+    <title>Movie API</title>
   </head>
   <body>
-    <img src="assets/images/anubis.jpg" width="500px" alt="anubis" />
+    <div class="header">
+      <img src="assets/images/logo.svg" alt="logo" class="header__logo">
+      <nav>
+        <ul class="menu">
+          <li class="menu__item">
+            <img src="assets/images/icon-nav-home.svg" alt="">
+          </li>
+          <li class="menu__item">
+            <img src="assets/images/icon-nav-movies.svg" alt="">
+          </li>
+          <li class="menu__item">
+            <img src="assets/images/icon-nav-tv-series.svg" alt="">
+          </li>
+          <li class="menu__item">
+            <img src="assets/images/icon-nav-bookmark.svg" alt="">
+          </li>
+        </ul>
+      </nav>
+      <img src="assets/images/image-avatar.png" alt="avatar image" class="header__avatar">
+    </div>
+    <main class="main">
+      <input class="search-input" type="text" placeholder="Search for movies or TV series">
+      <div class="trending">
+        <div id="trending" class="trending__slider">
+          <div class="trending__item">
+            <div class="trending__year"></div>
+            <div class="trending__media"></div>
+            <div class="trending__rating"></div>
+            <div class="trending__title"></div>
+          </div>
+          <div class="trending__item">
+            <div class="trending__year"></div>
+            <div class="trending__media"></div>
+            <div class="trending__rating"></div>
+            <div class="trending__title"></div>
+          </div>
+          <div class="trending__item">
+            <div class="trending__year"></div>
+            <div class="trending__media"></div>
+            <div class="trending__rating"></div>
+            <div class="trending__title"></div>
+          </div>
+          <div class="trending__item">
+            <div class="trending__year"></div>
+            <div class="trending__media"></div>
+            <div class="trending__rating"></div>
+            <div class="trending__title"></div>
+          </div>
+         
+        </div>
+      </div>
+    </main>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

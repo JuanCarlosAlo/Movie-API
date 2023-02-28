@@ -1,0 +1,33 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+@use "../mixins/hover.scss" as *;
+@use "../config/variables.scss" as *;
+
+.trending{
+    overflow-x: scroll;
+   &__slider{
+    display: flex;
+    gap: 4rem;
+    width: fit-content;
+   }
+    &__item{
+        height: 140px;
+        width: 250px;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+    &__title{
+        color:var(--secondary-color)
+    }
+}
+
+@include responsive(desktop){
+    .trending{
+       
+        &__item{
+            height: 230px;
+            width: 470px;
+            
+        }
+    }
+}

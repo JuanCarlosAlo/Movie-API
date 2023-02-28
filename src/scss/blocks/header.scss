@@ -1,1 +1,41 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+@use "../mixins/hover.scss" as *;
+@use "../config/variables.scss" as *;
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    padding: 1rem;
+    background-color: var(--tertiary-color);
+
+    &__avatar{
+        width: 24px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 50%;
+    }
+}
+
+@include responsive(desktop){
+    .header{
+        position: absolute;
+        top: 1rem;
+        justify-content: flex-start;
+        gap: 2rem;
+        flex-direction: column;
+        height:95vh;
+        width: 56px;
+        margin-left: 1rem;
+        border-radius: 1rem;
+        &__avatar{
+            position: absolute;
+            bottom:  2rem;
+            width: 24px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 50%;
+        }
+    }
+    
+}

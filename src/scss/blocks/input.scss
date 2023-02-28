@@ -1,0 +1,19 @@
+.search-input{
+    background-color: transparent;
+    border-color: transparent;
+    width: 100%;
+    padding: 1rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    background-image: url(../assets/images/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20px;
+   &:focus{
+    outline: none;
+    color:var(--secondary-color);
+    caret-color: var(--main-color);
+    border-bottom: 1px solid var(--quaternary-color);
+   }
+}

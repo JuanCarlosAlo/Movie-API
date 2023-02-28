@@ -1,0 +1,20 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+@use "../mixins/hover.scss" as *;
+@use "../config/variables.scss" as *;
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+@include responsive(desktop){
+    .menu{
+        flex-direction: column;
+        
+        width: auto;
+        height: 200px;
+    }
+    
+}
