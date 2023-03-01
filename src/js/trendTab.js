@@ -1,38 +1,42 @@
-import { WEEK_TRENDING } from "../js/const.js";
-
-const trending = document.getElementById("trending");
+import { URLS, API_URL, API_KEY } from '../js/const.js';
+import { fetchData } from '../js/utility.js';
+const trending = document.getElementById('trending');
 const rootStyles = document.documentElement.style;
 const allTrendingItems = [...trending.children];
+console.log(URLS.trendingWeekAll);
+const weekTrending = await fetchData(URLS.trendingWeekAll);
 
-const trendTab = () => {
-  console.log(WEEK_TRENDING, allTrendingItems);
+const trendTab = async () => {
+  const weekTrending = await fetchData(URLS.trendingWeekAll);
   allTrendingItems.forEach((item, index) => {
-    item.style.backgroundImage = `url(https://image.tmdb.org/t/p/w710_and_h400_multi_faces${WEEK_TRENDING.results[index].backdrop_path})`;
-    if (WEEK_TRENDING.results[index].name === undefined) {
-      item.children[3].textContent = WEEK_TRENDING.results[index].title;
+    item.style.backgroundImage = `url(https://image.tmdb.org/t/p/w710_and_h400_multi_faces${weekTrending.results[index].backdrop_path})`;
+    if (weekTrending.results[index].name) {
+      item.children[0].children[3].textContent =
+        weekTrending.results[index].name;
     } else {
-      item.children[3].textContent = WEEK_TRENDING.results[index].name;
+      item.children[0].children[3].textContent =
+        weekTrending.results[index].title;
     }
-    if (WEEK_TRENDING.results[index].first_air_date === undefined) {
-      item.children[0].textContent = WEEK_TRENDING.results[
-        index
-      ].release_date.slice(0, 4);
-    } else {
-      item.children[0].textContent = WEEK_TRENDING.results[
+    if (weekTrending.results[index].first_air_date) {
+      item.children[0].children[0].textContent = weekTrending.results[
         index
       ].first_air_date.slice(0, 4);
-      console.log(WEEK_TRENDING.results[index].first_air_date.slice(0, 4));
-    }
-    item.children[1].textContent = WEEK_TRENDING.results[index].media_type;
-
-    if (
-      (item.children[1].textContent =
-        WEEK_TRENDING.results[index].adult === true)
-    ) {
-      item.children[2].textContent = "PG";
     } else {
-      item.children[2].textContent = "+18";
+      item.children[0].children[0].textContent = weekTrending.results[
+        index
+      ].release_date.slice(0, 4);
     }
+    item.children[0].children[1].textContent =
+      weekTrending.results[index].media_type;
+
+    // if (
+    //   (item.children[1].textContent =
+    //     WEEK_TRENDING.results[index].adult === true)
+    // ) {
+    //   item.children[2].textContent = "PG";
+    // } else {
+    //   item.children[2].textContent = "+18";
+    // }
   });
 };
 

@@ -5,20 +5,49 @@
 
 .trending{
     overflow-x: scroll;
+    padding-bottom: 2rem;
    &__slider{
     display: flex;
     gap: 4rem;
     width: fit-content;
    }
+   &__info{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+   }
     &__item{
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
         height: 140px;
         width: 250px;
         background-size: cover;
         border-radius: 1rem;
+        
     }
     &__title{
+        font-size: 2rem;
         color:var(--secondary-color)
     }
+    &__year,&__media{
+        color: var(--secondary-color)
+    }
+    
+}
+.bookmark{
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    right: 2rem;
+    top: 2rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 @include responsive(desktop){
@@ -31,3 +60,26 @@
         }
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    height: 5px;
+    background-color: var(--quaternary-color);
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    height: 5px;
+    border-radius: 2rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+  }
