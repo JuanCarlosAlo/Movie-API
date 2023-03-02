@@ -11,6 +11,13 @@ const createSectionItem = (url, index) => {
   const yearItem = document.createElement("div");
   const mediaItem = document.createElement("div");
   const titleItem = document.createElement("div");
+  const bookmarkItem = document.createElement("div");
+  const bookmarkImg = document.createElement("img");
+
+  bookmarkImg.src = "../assets/images/icon-bookmark-empty.svg";
+  bookmarkItem.append(bookmarkImg);
+  bookmarkItem.classList.add("bookmark");
+  bookmarkItem.dataset.save = "bookmark";
 
   sectionItem.style.backgroundImage = `url(https://image.tmdb.org/t/p/w710_and_h400_multi_faces${url.results[index].backdrop_path})`;
 
@@ -34,7 +41,7 @@ const createSectionItem = (url, index) => {
   sectionItem.id = url.results[index].id;
   mediaItem.textContent = url.results[index].media_type;
   infoItem.append(yearItem, mediaItem);
-  sectionItem.append(infoItem, titleItem);
+  sectionItem.append(infoItem, titleItem, bookmarkItem);
   return sectionItem;
 };
 
