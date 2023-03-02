@@ -1,21 +1,17 @@
-import { URLS, API_URL, API_KEY } from '../js/const.js';
-import { fetchData } from '../js/utility.js';
-const trending = document.getElementById('trending');
+import { URLS, API_URL, API_KEY } from "../js/const.js";
+import { fetchData } from "../js/utility.js";
+const trending = document.getElementById("trending");
 const rootStyles = document.documentElement.style;
 const allTrendingItems = [...trending.children];
-console.log(URLS.trendingWeekAll);
-const weekTrending = await fetchData(URLS.trendingWeekAll);
 
 const trendTab = async () => {
-  const weekTrending = await fetchData(URLS.trendingWeekAll);
+  const weekTrending = await fetchData(URLS[0].link);
   allTrendingItems.forEach((item, index) => {
     item.style.backgroundImage = `url(https://image.tmdb.org/t/p/w710_and_h400_multi_faces${weekTrending.results[index].backdrop_path})`;
     if (weekTrending.results[index].name) {
-      item.children[0].children[3].textContent =
-        weekTrending.results[index].name;
+      item.children[1].textContent = weekTrending.results[index].name;
     } else {
-      item.children[0].children[3].textContent =
-        weekTrending.results[index].title;
+      item.children[1].textContent = weekTrending.results[index].title;
     }
     if (weekTrending.results[index].first_air_date) {
       item.children[0].children[0].textContent = weekTrending.results[

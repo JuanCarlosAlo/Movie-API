@@ -4,10 +4,12 @@
 @use "../config/variables.scss" as *;
 
 .header{
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 56px;
+    width: 100%;
     padding: 1rem;
     background-color: var(--tertiary-color);
 
@@ -20,7 +22,7 @@
 
 @include responsive(desktop){
     .header{
-        position: absolute;
+       
         top: 1rem;
         justify-content: flex-start;
         gap: 2rem;
