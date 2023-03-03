@@ -1,0 +1,35 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+@use "../mixins/hover.scss" as *;
+@use "../config/variables.scss" as *;
+
+.modal{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10rem;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+
+   &__cross{
+    position: absolute;
+    top: 10rem;
+    left: 5%;
+    width: 30px;
+    height: 30px;
+    }
+    &__poster{
+        
+        width: 350px;
+    }
+}
+
+
+.modal--show{
+    display: flex;
+}

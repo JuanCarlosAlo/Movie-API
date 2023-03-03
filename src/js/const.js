@@ -48,4 +48,11 @@ const getAllSeries = async () => {
   return allPromises;
 };
 
-export { getAllSeries, getAllMoviesData, URL_MOVIE, URL_TV };
+const getAllDetails = async (id, mediaType) => {
+  const allDetails = await fetchData(
+    API_URL + mediaType + '/' + id + '?api_key=' + API_KEY
+  );
+  return allDetails;
+};
+
+export { getAllSeries, getAllMoviesData, URL_MOVIE, URL_TV, getAllDetails };

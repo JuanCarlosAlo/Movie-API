@@ -3,11 +3,14 @@
 @use "../mixins/hover.scss" as *;
 @use "../config/variables.scss" as *;
 .main{
+   
     padding: 1rem;
+    padding-top: 6rem;
 }
 
 @include responsive(desktop){
     .main{
+        padding-top: 2rem;
         margin-left: calc(56px + 2rem);
     }
 }

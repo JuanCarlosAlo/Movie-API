@@ -1,4 +1,10 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+@use "../mixins/hover.scss" as *;
+@use "../config/variables.scss" as *;
+
 .search-input{
+    position: relative;
     background-color: transparent;
     border-color: transparent;
     width: 100%;
@@ -10,10 +16,17 @@
     background-repeat: no-repeat;
     background-position: left;
     background-size: 20px;
+    z-index: 10;
    &:focus{
     outline: none;
     color:var(--secondary-color);
     caret-color: var(--main-color);
     border-bottom: 1px solid var(--quaternary-color);
    }
+}
+
+@include responsive(desktop){
+    .search-input{
+
+    }
 }
