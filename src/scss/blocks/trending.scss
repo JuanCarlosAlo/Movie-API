@@ -56,7 +56,12 @@
     top: 1rem;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.7);
+    &--img{
+        pointer-events: none;
+    }
+    
 }
+
 
 @include responsive(desktop){
     .trending{

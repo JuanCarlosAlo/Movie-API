@@ -9,12 +9,23 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 10rem;
-    bottom: 0;
+    padding: 1rem;
+    padding-top: 10rem;
+    top: 0;
     left: 0;
-    width: 100vw;
+    gap: 1rem;
+    width: 99vw;
     height: 100vh;
+    color: var(--secondary-color);
     background-color: var(--background-color);
+    overflow-y: scroll;
+    @include responsive(laptop){
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 10rem;
+        gap: 4rem;
+    }
 
    &__cross{
     position: absolute;
@@ -27,6 +38,52 @@
         
         width: 350px;
     }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        
+        gap: 1rem;
+        width: 100%;
+        @include responsive(laptop){
+            width: 50%;
+        }
+        
+    }
+    &__title{
+        font-size: 2.5rem;
+        
+    }
+    &__description{
+        font-size: 1.5rem;
+       
+    }
+    &__rating{
+        font-size: 2.5rem;
+    }
+    &__specs{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__genres{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+    }
+    &__casts{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+}
+
+.modal-button{
+
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: var(--background-color);
+    background-color: var(--secondary-color);
 }
 
 

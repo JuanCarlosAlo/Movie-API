@@ -1,21 +1,24 @@
 const numberOfSectionItems = 6;
 
 const createSectionItem = (url, index, mediaType) => {
-  const sectionItem = document.createElement('div');
-  const infoItem = document.createElement('div');
-  const yearItem = document.createElement('div');
-  const mediaItem = document.createElement('div');
-  const titleItem = document.createElement('div');
-  const bookmarkItem = document.createElement('div');
-  const bookmarkImg = document.createElement('img');
+  const sectionItem = document.createElement("div");
+  const infoItem = document.createElement("div");
+  const yearItem = document.createElement("div");
+  const mediaItem = document.createElement("div");
+  const titleItem = document.createElement("div");
+  const bookmarkItem = document.createElement("div");
+  const bookmarkImg = document.createElement("img");
 
-  bookmarkImg.src = '../assets/images/icon-bookmark-empty.svg';
+  bookmarkImg.src = "../assets/images/icon-bookmark-empty.svg";
+  bookmarkImg.classList.add("bookmark--img");
   bookmarkItem.append(bookmarkImg);
-  bookmarkItem.classList.add('bookmark');
-  bookmarkItem.dataset.save = 'bookmark';
+  bookmarkItem.classList.add("bookmark");
+  bookmarkItem.dataset.save = "bookmark";
 
-  sectionItem.classList.add('section__item');
+  sectionItem.classList.add("section__item");
   sectionItem.dataset.mediaType = mediaType;
+  sectionItem.dataset.id = url[index].id;
+  mediaItem.textContent = mediaType;
 
   sectionItem.style.backgroundImage = `url(https://image.tmdb.org/t/p/w710_and_h400_multi_faces${url[index].backdrop_path})`;
 
@@ -30,12 +33,11 @@ const createSectionItem = (url, index, mediaType) => {
     yearItem.textContent = url[index].release_date.slice(0, 4);
   }
   if (index === 4) {
-    sectionItem.classList.add('section__item--bottom-left');
+    sectionItem.classList.add("section__item--bottom-left");
   } else if (index === 5) {
-    sectionItem.classList.add('section__item--bottom-right');
+    sectionItem.classList.add("section__item--bottom-right");
   }
-  sectionItem.dataset.id = url[index].id;
-  mediaItem.textContent = mediaType;
+
   infoItem.append(yearItem, mediaItem);
   sectionItem.append(infoItem, titleItem, bookmarkItem);
   return sectionItem;
@@ -43,13 +45,13 @@ const createSectionItem = (url, index, mediaType) => {
 
 const createSection = (arrayObj, allData, mainContainer, mediaType) => {
   const fragment = document.createDocumentFragment();
-  const sectionContainer = document.createElement('div');
-  const sectionContent = document.createElement('div');
-  const sectionTitle = document.createElement('div');
-  sectionTitle.classList.add('section__title');
+  const sectionContainer = document.createElement("div");
+  const sectionContent = document.createElement("div");
+  const sectionTitle = document.createElement("div");
+  sectionTitle.classList.add("section__title");
 
   sectionTitle.textContent = arrayObj.title;
-  sectionContainer.classList.add('section-container');
+  sectionContainer.classList.add("section-container");
 
   for (let index = 0; index < numberOfSectionItems; index++) {
     const sectionItem = createSectionItem(allData, index, mediaType);
