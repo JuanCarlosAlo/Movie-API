@@ -11,9 +11,10 @@ import {
   getAllCredits,
 } from "../js/const.js";
 import { modalOpen } from "../js/modal.js";
-import { bookmarked } from "./bookmarked";
+import { bookmarked, printBookmarked } from "./bookmarked";
 
 const mainContainer = document.getElementById("main-content");
+const bookmarkedButton = document.getElementById("bookmarked-button");
 
 const movieArray = [...URL_MOVIE];
 const serieArray = [...URL_TV];
@@ -49,4 +50,8 @@ mainContainer.addEventListener("click", async (e) => {
     );
     modalOpen(allDetailsData, allCreditsData);
   }
+});
+
+bookmarkedButton.addEventListener("click", (e) => {
+  printBookmarked(mainContainer);
 });
