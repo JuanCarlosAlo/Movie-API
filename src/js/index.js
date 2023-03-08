@@ -22,7 +22,7 @@ const serieArray = [...URL_TV];
 window.addEventListener("load", async () => {
   const allMoviesData = await getAllMoviesData();
   const allSeriesData = await getAllSeries();
-  console.log(allMoviesData);
+  console.log(allMoviesData, movieArray);
 
   trendTab(mainContainer, movieArray[0], allMoviesData[0], "movie");
   createSections(mainContainer, movieArray, allMoviesData, "movie");

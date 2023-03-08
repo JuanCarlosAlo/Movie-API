@@ -75,4 +75,4 @@ const createSections = (mainContainer, arrayObj, allData, mediaType) => {
   });
 };
 
-export { createSections };
+export { createSections, createSection };
