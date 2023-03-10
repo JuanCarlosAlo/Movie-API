@@ -64,13 +64,6 @@ const getAllCredits = async (id, mediaType) => {
   return allCredits;
 };
 
-const getAllBookmarked = async (id, mediaType) => {
-  const allBookedmarked = await fetchData(
-    API_URL + mediaType + "/" + id + "?api_key=" + API_KEY
-  );
-  return allBookedmarked;
-};
-
 export {
   getAllSeries,
   getAllMoviesData,
@@ -78,5 +71,4 @@ export {
   URL_TV,
   getAllDetails,
   getAllCredits,
-  getAllBookmarked,
 };

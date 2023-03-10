@@ -12,6 +12,7 @@ const fillSliderItem = (arrayObj, data, mediaType) => {
   const bookmarkImg = document.createElement("img");
   trendingItem.classList.add("trending__item");
   trendingItem.dataset.id = data.id;
+
   trendingItem.dataset.mediaType = mediaType;
   infoItem.classList.add("trending__info");
   yearItem.classList.add("trending__year");
@@ -23,6 +24,7 @@ const fillSliderItem = (arrayObj, data, mediaType) => {
   bookmarkItem.append(bookmarkImg);
   bookmarkItem.classList.add("bookmark");
   bookmarkItem.dataset.save = "bookmark";
+  bookmarkItem.dataset.checked = "unchecked";
 
   trendingItem.style.backgroundImage = `url(https://image.tmdb.org/t/p/w710_and_h400_multi_faces${data.backdrop_path})`;
   if (data.name) {

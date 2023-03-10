@@ -14,9 +14,11 @@ const createSectionItem = (url, index, mediaType) => {
   bookmarkItem.append(bookmarkImg);
   bookmarkItem.classList.add("bookmark");
   bookmarkItem.dataset.save = "bookmark";
+  bookmarkItem.dataset.checked = "unchecked";
 
   sectionItem.classList.add("section__item");
   sectionItem.dataset.mediaType = mediaType;
+
   sectionItem.dataset.id = url[index].id;
   mediaItem.textContent = mediaType;
 

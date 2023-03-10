@@ -15,11 +15,24 @@ import { bookmarked, printBookmarked } from "./bookmarked";
 
 const mainContainer = document.getElementById("main-content");
 const bookmarkedButton = document.getElementById("bookmarked-button");
+const homeButton = document.getElementById("home");
 
 const movieArray = [...URL_MOVIE];
 const serieArray = [...URL_TV];
 
 window.addEventListener("load", async () => {
+  const allMoviesData = await getAllMoviesData();
+  const allSeriesData = await getAllSeries();
+  console.log(allMoviesData, movieArray);
+
+  trendTab(mainContainer, movieArray[0], allMoviesData[0], "movie");
+  createSections(mainContainer, movieArray, allMoviesData, "movie");
+  trendTab(mainContainer, serieArray[0], allSeriesData[0], "tv");
+  createSections(mainContainer, serieArray, allSeriesData, "tv");
+});
+
+homeButton.addEventListener("click", async (e) => {
+  mainContainer.innerHTML = "";
   const allMoviesData = await getAllMoviesData();
   const allSeriesData = await getAllSeries();
   console.log(allMoviesData, movieArray);
